@@ -1,0 +1,25 @@
+<po-page-default p-title="Form" [p-actions]="actions">
+	<po-container>
+		<form [formGroup]="formulario">
+			<div class="po-row">
+				<po-input
+					class="po-md-12"
+					formControlName="name"
+					p-label="Nome">
+				</po-input>
+			</div>
+			<div class="po-row">
+				<po-datepicker
+					class="po-md-6"
+					formControlName="nascimento"
+					p-label="Data de Nascimento">
+				</po-datepicker>
+				<po-number
+					class="po-md-6"
+					formControlName="idade"
+					p-label="Idade">
+				</po-number>
+			</div>
+		</form>
+	</po-container>
+</po-page-default>>
