@@ -22,11 +22,11 @@ export class DynamicFormComponent {
       property: 'nascimento',
       label: 'Data de nascimento',
       type: 'date',
-      format: 'mm/dd/yyyy',
       gridColumns: 6,
     },
     { property: 'idade',
-      required: true, label: 'Idade',
+      required: true,
+      label: 'Idade',
       gridColumns: 6,
       minValue: 18,
       type: 'number'

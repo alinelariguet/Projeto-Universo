@@ -28,8 +28,7 @@ export class AppComponent {
     { label: 'Page Dynamic Edit', action: this.goTo.bind(this, 'page-dynamic-edit') }
   ];
 
-  constructor(private router: Router) {
-  }
+  constructor(private router: Router) { }
 
   private goTo(path: string) {
     this.router.navigate([`/${path}`]);

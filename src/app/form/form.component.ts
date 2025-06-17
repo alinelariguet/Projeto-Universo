@@ -27,8 +27,8 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {
     this.formulario = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
-      nascimento: [null, []],
-      idade: ['', [Validators.required, Validators.min(18)]],
+      nascimento: [undefined, []],
+      idade: [null, [Validators.required, Validators.min(18)]]
     })
   }
 
