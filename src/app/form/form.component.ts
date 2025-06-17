@@ -19,7 +19,10 @@ export class FormComponent implements OnInit {
     }
   ]
 
-  constructor(private fb: FormBuilder, private poNotification: PoNotificationService) {}
+  constructor(
+    private fb: FormBuilder,
+    private poNotification: PoNotificationService
+  ) { }
 
   ngOnInit(): void {
     this.formulario = this.fb.group({
@@ -35,6 +38,5 @@ export class FormComponent implements OnInit {
       console.log(this.formulario.value)
     }
   }
-
 
 }

@@ -10,18 +10,6 @@ import { PoDynamicFormComponent, PoModule, PoNotificationService, PoPageAction }
 export class DynamicFormComponent {
   @ViewChild('dynamicForm', { static: true }) dynamicForm!: PoDynamicFormComponent;
 
-  readonly actions: Array<PoPageAction> = [
-    {
-      label: 'Salvar',
-      action: () => this.submitForm(),
-      disabled: () => this.dynamicForm.form.invalid
-    }
-  ];
-
-  constructor(private poNotification: PoNotificationService) {
-
-  }
-
   fields = [
     {
       property: 'name',
@@ -37,8 +25,23 @@ export class DynamicFormComponent {
       format: 'mm/dd/yyyy',
       gridColumns: 6,
     },
-    { property: 'idade', required: true, label: 'Idade', gridColumns: 6, minValue: 18, type: 'number' },
+    { property: 'idade',
+      required: true, label: 'Idade',
+      gridColumns: 6,
+      minValue: 18,
+      type: 'number'
+    },
   ];
+
+  readonly actions: Array<PoPageAction> = [
+    {
+      label: 'Salvar',
+      action: () => this.submitForm(),
+      disabled: () => this.dynamicForm.form.invalid
+    }
+  ];
+
+  constructor(private poNotification: PoNotificationService) {}
 
   submitForm() {
     this.poNotification.success('Formulário salvo!')
